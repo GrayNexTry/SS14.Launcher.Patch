@@ -42,8 +42,13 @@
               Command="{Binding ParentVM.SwitchToForgotPassword}" IsEnabled="{Binding !Busy}" />
     </DockPanel>
 
-    <DockPanel DockPanel.Dock="Top" LastChildFill="False" MaxWidth="300">
+    <!--<DockPanel DockPanel.Dock="Top" LastChildFill="False" MaxWidth="300">
         <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Content="{loc:Loc login-login-button-resend}"
+                Command="{Binding ResendConfirmationPressed}"/>
+    </DockPanel>-->
+    
+    <DockPanel DockPanel.Dock="Top" LastChildFill="False" MaxWidth="300">
+        <Button DockPanel.Dock="Left" HorizontalAlignment="Center" Width="300" Content="{loc:Loc login-login-button-resend}"
                 Command="{Binding ResendConfirmationPressed}"/>
     </DockPanel>
 

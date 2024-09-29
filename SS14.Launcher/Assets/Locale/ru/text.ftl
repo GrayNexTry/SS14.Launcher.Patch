@@ -40,7 +40,7 @@ tab-servers-list-status-updating-master = Получение главного с
 # Strings for the server filters menu
 filters-player-count-maximum-desc = Серверы с большим количеством игроков не будут показаны
 # Strings for the "login" view on login
-login-login-button-resend = Отправить ещё раз e-mail подтверждение
+login-login-button-resend = Отправить e-mail подтверждение
 # Strings for the general main window layout of the launcher
 main-window-out-of-date-desc =
     Данный лаунчер устарел.
