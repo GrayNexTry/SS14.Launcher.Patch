@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -11,8 +11,20 @@ namespace SS14.Launcher.Models;
 /// </summary>
 public sealed class LauncherInfoManager(HttpClient httpClient)
 {
+    private static readonly List<string> _messages =
+    [
+        "I'm sorry, wizard.",
+        "THIS IS NOT CHEAT!!",
+        "Test Test Test",
+        "Hack the space",
+        "How are u?",
+        "Hehehe",
+        "KILL EVERYONE!!!",
+        "I hate everyone",
+        "It's a cheat?",
+        "Okey, let's go"
+    ];
     private readonly Random _messageRandom = new();
-    private string[]? _messages;
 
     private LauncherInfoModel? _model;
 
@@ -55,17 +67,19 @@ public sealed class LauncherInfoManager(HttpClient httpClient)
 
         // This is future-proofed to support multiple languages,
         // but for now the launcher only supports English so it'll have to do.
-        info.Messages.TryGetValue("en-US", out _messages);
+        //info.Messages.TryGetValue("en-US", out _messages);
+        // Ok, I change this?
 
         _model = info;
     }
-
     public string? GetRandomMessage()
     {
-        if (_messages == null)
-            return null;
 
-        return _messages[_messageRandom.Next(_messages.Length)];
+        return _messages[_messageRandom.Next(_messages.Count)];
+        //if (_messages == null)
+        //    return null;
+
+        //return _messages[_messageRandom.Next(_messages.Length)];
     }
 
     public sealed record LauncherInfoModel(
